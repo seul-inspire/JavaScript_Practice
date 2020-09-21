@@ -11,16 +11,34 @@
 
   <input type="button" value="dark mode" onclick="
     var b_sty = document.querySelector('body').style;
-    if(this.value=='dark mode'){
+    var alist = document.querySelectorAll('a');
+    var i=0;
+    if(this.value==='dark mode'){      
       b_sty.backgroundColor='black';
       b_sty.color='white';
       this.value='light mode';
+
+      while(i<alist.length){
+        alist[i].style.color='powderblue';
+        i++;
+      }
     } else{
-      b_sty.backgroundColor='white';
-      b_sty.color='black';
       this.value='dark mode';
+      b_sty.backgroundColor='white';
+      b_sty.color='black';  
+       
+      while(i<alist.length){
+        alist[i].style.color='blue';
+        i++;
+      }
     }
   ">
+
+  <ol>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ol>
 
   <!--
   <input id="test" type="button" value="dark mode" onclick="
