@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>조건문 활용하여 토글버튼만들기</title>
+  <link rel="stylesheet" href="css/index.css">
+  <script>
+    function setColor(color) {
+      var alist = document.querySelectorAll('a');
+      var i = 0;
+      while (i < alist.length) {
+        alist[i].style.color = color;
+        i++;
+      }
+    }
+    function nightDayHandler(self){
+      var bodyStyle = document.querySelector('body').style;
+      var inputStyle = document.querySelector('input').style;
+      if(self.value === '다크모드 전환') {
+        bodyStyle.backgroundColor = '#333';
+        bodyStyle.color = '#fff';
+        inputStyle.backgroundColor = 'orange';
+        setColor('white');
+        self.value = '라이트모드 전환'
+      }
+      else {
+        bodyStyle.backgroundColor = '#fff';
+        bodyStyle.color = '#000';
+        inputStyle.backgroundColor = '#333';
+        setColor('#333');
+        self.value = '다크모드 전환'
+      }
+    }
+  </script>
+</head>
+<body>
+  <h1><a href="#">WEB</a></h1>
+  <ol>
+    <li><a href="#">HTML</a></li>
+    <li><a href="#">CSS</a></li>
+    <li><a href="#">JavaScript</a></li>
+  </ol>
+  <input type="button" value="다크모드 전환" onclick="nightDayHandler(this)">
+  <p>조건문을 활용하여 토글버튼 만들기</p>
+</body>
+</html>
